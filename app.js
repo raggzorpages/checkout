@@ -1,4 +1,9 @@
 // Firebase configuration and initialization
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js';
+import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js';
+import { getAuth } from 'https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js';
+import { getStorage } from 'https://www.gstatic.com/firebasejs/10.14.0/firebase-storage.js';
+
 const firebaseConfig = {
     apiKey: "AIzaSyC3nmngHjP8vAlkfr_T9cw52ZyyJyoWmKU",
     authDomain: "kleiven-d995b.firebaseapp.com",
@@ -9,6 +14,11 @@ const firebaseConfig = {
     appId: "1:790753027743:web:ab93c56a9671e6a4e9a4aa",
     measurementId: "G-Q14Q0XLGS6"
   };
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+const storage = getStorage(app);
 
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
