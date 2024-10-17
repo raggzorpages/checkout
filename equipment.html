@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equipment Management</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Equipment Management</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>Manage Equipment</h2>
-    <button id="add-equipment-btn">Add Equipment</button>
+  <h2>Equipment Management</h2>
 
-    <div id="add-equipment-form" style="display:none;">
-        <input type="text" id="equipment-name" placeholder="Equipment Name" required><br>
-        <textarea id="equipment-description" placeholder="Description"></textarea><br>
-        <input type="file" id="equipment-image"><br>
-        <input type="text" id="equipment-barcode" placeholder="Barcode"><br>
-        <input type="number" id="equipment-value" placeholder="Value"><br>
-        <button id="submit-equipment">Submit</button>
-    </div>
+  <!-- Add Equipment Form -->
+  <h3>Add Equipment</h3>
+  <input type="text" id="equip-name" placeholder="Name (required)" /><br />
+  <input type="text" id="equip-desc" placeholder="Description" /><br />
+  <input type="text" id="equip-barcode" placeholder="Barcode" /><br />
+  <input type="number" id="equip-value" placeholder="Value" /><br />
+  <input type="file" id="equip-image" /><br />
+  <button id="add-equipment">Add Equipment</button>
 
-    <input type="text" id="equipment-search" placeholder="Search Equipment">
-    <div id="equipment-list"></div>
+  <!-- Search Equipment -->
+  <h3>Search Equipment</h3>
+  <input type="text" id="equipment-search-bar" placeholder="Search Equipment" />
 
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js"></script>
-    <script src="app.js"></script>
+  <!-- Equipment List -->
+  <ul id="equipment-list"></ul>
+
+  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-storage.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

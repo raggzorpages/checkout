@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equipment Checkout</title>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.0/firebase-storage.js"></script>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Equipment Checkout</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-        <div id="login-screen">
-            <h2>Login</h2>
-            <input type="email" id="email" placeholder="Email"><br>
-            <input type="password" id="password" placeholder="Password"><br>
-            <button id="login-btn">Login</button>
-        </div>
+  <!-- Login Screen -->
+  <div id="login-screen">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" /><br />
+    <input type="password" id="password" placeholder="Password" /><br />
+    <button id="login-button">Login</button>
+  </div>
 
-    <div id="checkout-screen" style="display:none;">
-        <h2>Equipment Checkout</h2>
-        <label for="equipment-search">Search Equipment:</label>
-        <input type="text" id="equipment-search" placeholder="Search by name or barcode">
-        <div id="equipment-list"></div>
-        
-        <h3>Customer Details</h3>
-        <input type="text" id="customer-name" placeholder="Customer Name">
-        <input type="text" id="contact-info" placeholder="Contact Info">
-        <label for="from-date">From:</label>
-        <input type="date" id="from-date">
-        <label for="to-date">To:</label>
-        <input type="date" id="to-date">
-        
-        <button id="submit-checkout">Submit Checkout</button>
-    </div>
+  <!-- Equipment Checkout Page -->
+  <div id="checkout-screen" style="display:none;">
+    <h2>Equipment Checkout</h2>
+    <!-- Search Field -->
+    <input type="text" id="equipment-search" placeholder="Search Equipment or Barcode" />
+    <div id="search-results"></div>
 
-    <script src="app.js"></script>
+    <!-- Checkout List -->
+    <h3>Checkout List</h3>
+    <ul id="checkout-list"></ul>
+
+    <!-- Renter Information -->
+    <h3>Renter Information</h3>
+    <input type="text" id="renter-name" placeholder="Name" /><br />
+    <input type="text" id="renter-contact" placeholder="Contact Info" /><br />
+    <input type="date" id="rent-from-date" placeholder="From Date" /><br />
+    <input type="date" id="rent-to-date" placeholder="To Date" /><br />
+    <button id="confirm-checkout">Confirm Checkout</button>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-storage.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
