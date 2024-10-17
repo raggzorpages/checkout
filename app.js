@@ -15,15 +15,12 @@ const firebaseConfig = {
     measurementId: "G-Q14Q0XLGS6"
   };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
-const storage = getStorage(app);
+  firebase.initializeApp(firebaseConfig);
 
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const db = firebase.firestore();
-const storage = firebase.storage();
+  // Initialize services
+  const db = firebase.firestore();
+  const auth = firebase.auth();
+  const storage = firebase.storage();
 
 // Simple Authentication (Replace with Firebase Auth if needed)
 const loginScreen = document.getElementById('login-screen');
