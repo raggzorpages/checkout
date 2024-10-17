@@ -23,6 +23,32 @@ const firebaseConfig = {
   const db = getFirestore(app);
   const storage = getStorage(app);
 
+  // Elements
+const loginScreen = document.getElementById('login-screen');
+const checkoutScreen = document.getElementById('checkout-screen');
+const loginBtn = document.getElementById('login-btn');
+
+// Login functionality
+loginBtn.addEventListener('click', function() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // Use Firebase Authentication to sign in
+    auth.signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            // User signed in
+            const user = userCredential.user;
+
+            // Hide login screen and show checkout screen
+            loginScreen.style.display = 'none';
+            checkoutScreen.style.display = 'block';
+        })
+        .catch((error) => {
+            // Handle errors (wrong password, user not found, etc.)
+            alert(error.message);
+        });
+});
+
 // Simple Authentication (Replace with Firebase Auth if needed)
 const loginScreen = document.getElementById('login-screen');
 const checkoutScreen = document.getElementById('checkout-screen');
