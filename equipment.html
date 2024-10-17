@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Manage Equipment</h2>
+    <button id="add-equipment-btn">Add Equipment</button>
+
+    <div id="add-equipment-form" style="display:none;">
+        <input type="text" id="equipment-name" placeholder="Equipment Name" required><br>
+        <textarea id="equipment-description" placeholder="Description"></textarea><br>
+        <input type="file" id="equipment-image"><br>
+        <input type="text" id="equipment-barcode" placeholder="Barcode"><br>
+        <input type="number" id="equipment-value" placeholder="Value"><br>
+        <button id="submit-equipment">Submit</button>
+    </div>
+
+    <input type="text" id="equipment-search" placeholder="Search Equipment">
+    <div id="equipment-list"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
