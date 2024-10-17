@@ -1,12 +1,14 @@
 // Firebase configuration and initialization
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_MESSAGING_ID",
-    appId: "YOUR_APP_ID"
-};
+    apiKey: "AIzaSyC3nmngHjP8vAlkfr_T9cw52ZyyJyoWmKU",
+    authDomain: "kleiven-d995b.firebaseapp.com",
+    databaseURL: "https://kleiven-d995b-default-rtdb.europe-west1.firebasedatabase.app",  // Ensure correct region
+    projectId: "kleiven-d995b",
+    storageBucket: "kleiven-d995b.appspot.com",
+    messagingSenderId: "790753027743",
+    appId: "1:790753027743:web:ab93c56a9671e6a4e9a4aa",
+    measurementId: "G-Q14Q0XLGS6"
+  };
 
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
